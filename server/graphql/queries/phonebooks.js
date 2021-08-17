@@ -16,7 +16,7 @@ const ContactQueryType = {
         },
         resolve: (_, args) => {
             const { offset, limit, searchName, searchPhone } = args.pagination;
-            // console.log(args.pagination)
+            
             return {
                 items: services.getContacts(offset, limit, searchName, searchPhone),
                 count: services.totalData(searchName, searchPhone)
